@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:simulink="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#">
+	<rdfs:Class rdf:about="simulink:WorkingDirectory">
+		<rdfs:label xml:lang="en-GB">WorkingDirectory</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:WorkingDirectory_model">
+		<rdfs:label xml:lang="en-GB">model</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:Model">
+		<rdfs:label xml:lang="en-GB">Model</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:null"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Model_name">
+		<rdfs:label xml:lang="en-GB">name</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Model_block">
+		<rdfs:label xml:lang="en-GB">block</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Model_line">
+		<rdfs:label xml:lang="en-GB">line</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:Block">
+		<rdfs:label xml:lang="en-GB">Block</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:null"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Block_name">
+		<rdfs:label xml:lang="en-GB">name</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Block_type">
+		<rdfs:label xml:lang="en-GB">type</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Block_inputPort">
+		<rdfs:label xml:lang="en-GB">inputPort</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Block_outputPort">
+		<rdfs:label xml:lang="en-GB">outputPort</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Block_parameter">
+		<rdfs:label xml:lang="en-GB">parameter</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:Line">
+		<rdfs:label xml:lang="en-GB">Line</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:null"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Line_sourcePort">
+		<rdfs:label xml:lang="en-GB">sourcePort</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Line_targetPort">
+		<rdfs:label xml:lang="en-GB">targetPort</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:Port">
+		<rdfs:label xml:lang="en-GB">Port</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:null"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Port_id">
+		<rdfs:label xml:lang="en-GB">id</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:InputPort">
+		<rdfs:label xml:lang="en-GB">InputPort</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:Port"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Port_id">
+		<rdfs:label xml:lang="en-GB">id</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:OutputPort">
+		<rdfs:label xml:lang="en-GB">OutputPort</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:Port"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Port_id">
+		<rdfs:label xml:lang="en-GB">id</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdfs:Class rdf:about="simulink:Parameter">
+		<rdfs:label xml:lang="en-GB">Parameter</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+		<rdfs:subClassOf rdf:resource="simulink:null"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="simulink:Parameter_name">
+		<rdfs:label xml:lang="en-GB">name</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+	<rdf:Property rdf:about="simulink:Parameter_value">
+		<rdfs:label xml:lang="en-GB">value</rdfs:label>
+		<rdfs:isDefinedBy rdf:resource="http://localhost:8181/oslc4jsimulink/services/rdfvocabulary#"/>
+		<dcterms:issued>2014-01-05</dcterms:issued>
+	</rdf:Property>
+</rdf:RDF>
