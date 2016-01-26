@@ -49,7 +49,7 @@ import org.eclipse.lyo.adapter.simulink.resources.SimulinkLine;
 import org.eclipse.lyo.adapter.simulink.resources.SimulinkModel;
 import org.eclipse.lyo.adapter.simulink.resources.SimulinkOutputPort;
 import org.eclipse.lyo.adapter.simulink.resources.SimulinkParameter;
-import org.eclipse.lyo.adapter.subversion.SubversionFile;
+import edu.gatech.mbsec.adapter.subversion.SubversionFile;
 import org.eclipse.lyo.oslc4j.core.model.AbstractResource;
 import org.eclipse.lyo.oslc4j.core.model.Link;
 

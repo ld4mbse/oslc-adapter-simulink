@@ -63,7 +63,7 @@ String modelName = (String) request.getAttribute("modelName");
 				</a><br> Adapter Publisher: <a class="notfancy"
 					href="http://www.mbsec.gatech.edu/research/oslc" target="_blank">Georgia
 					Institute of Technology OSLC Tools Project</a><br> Adapter
-				Identity: org.eclipse.lyo.adapter.simulink
+				Identity: edu.gatech.mbsec.adapter.simulink
 			</p>
 		</div>
 		<br>
@@ -120,8 +120,7 @@ String modelName = (String) request.getAttribute("modelName");
 
 
 	<!-- footer -->
-	<p id="footer">OSLC Simulink Adapter 0.1 brought to you by <a class="nofancyfooter"
-	 href="https://www.eclipse.org/lyo/" target="_blank">Eclipse Lyo</a>
+	<p id="footer">OSLC Simulink Adapter 1.1</p>
 	 
 </body>
 </html>

@@ -214,8 +214,7 @@ String requestURL = (String)request.getAttribute("requestURL");
 
 
 	<!-- footer -->
-	<p id="footer">OSLC Simulink Adapter 0.1 brought to you by <a class="nofancyfooter"
-	 href="https://www.eclipse.org/lyo/" target="_blank">Eclipse Lyo</a>
+	<p id="footer">OSLC Simulink Adapter 1.1</p>
 	 
 </body>
 </html>
