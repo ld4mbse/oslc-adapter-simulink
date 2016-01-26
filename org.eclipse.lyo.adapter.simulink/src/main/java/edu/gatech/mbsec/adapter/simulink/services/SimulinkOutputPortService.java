@@ -35,11 +35,11 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.simulink.resources.Constants;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkBlock;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkInputPort;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkModel;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkOutputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.Constants;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
 import org.eclipse.lyo.oslc4j.core.model.OslcConstants;
@@ -96,7 +96,7 @@ public class SimulinkOutputPortService {
 	@Path("{uri}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
 			OslcMediaType.APPLICATION_JSON })
-	public org.eclipse.lyo.adapter.simulink.resources.SimulinkOutputPort getOutputPort(
+	public edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort getOutputPort(
 			@PathParam("modelName") final String modelName,
 			@PathParam("uri") final String qualifiedName)
 			throws URISyntaxException {

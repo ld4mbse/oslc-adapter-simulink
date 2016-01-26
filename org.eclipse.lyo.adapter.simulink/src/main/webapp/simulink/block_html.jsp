@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.simulink.resources.SimulinkBlock"%>
+	import="edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock"%>
 <%
 
 SimulinkBlock block = (SimulinkBlock)request.getAttribute("block");

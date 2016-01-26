@@ -24,11 +24,11 @@ import java.util.Set;
 
 import org.apache.wink.client.handlers.BasicAuthSecurityHandler;
 import org.apache.wink.client.handlers.ClientHandler;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkBlock;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkInputPort;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkLine;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkOutputPort;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkParameter;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkLine;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkParameter;
 import org.eclipse.lyo.oslc4j.client.OslcRestClient;
 import org.eclipse.lyo.oslc4j.core.model.Link;
 import org.eclipse.lyo.oslc4j.core.model.QueryCapability;

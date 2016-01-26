@@ -42,8 +42,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 import javax.ws.rs.core.UriInfo;
 
-import org.eclipse.lyo.adapter.simulink.resources.Constants;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkBlock;
+import edu.gatech.mbsec.adapter.simulink.resources.Constants;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;

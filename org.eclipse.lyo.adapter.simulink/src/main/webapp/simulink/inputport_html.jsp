@@ -26,7 +26,7 @@
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.Link"%>
 <%@ page import="java.net.URI"%>
 <%@ page
-	import="org.eclipse.lyo.adapter.simulink.resources.SimulinkInputPort"%>
+	import="edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort"%>
 <%
 
 SimulinkInputPort element = (SimulinkInputPort)request.getAttribute("element");

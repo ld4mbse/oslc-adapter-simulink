@@ -26,7 +26,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
 
-import org.eclipse.lyo.adapter.simulink.resources.Constants;
+import edu.gatech.mbsec.adapter.simulink.resources.Constants;
 import edu.gatech.mbsec.adapter.subversion.SubversionConstants;
 import edu.gatech.mbsec.adapter.subversion.SubversionFileService;
 import org.eclipse.lyo.oslc4j.client.ServiceProviderRegistryURIs;

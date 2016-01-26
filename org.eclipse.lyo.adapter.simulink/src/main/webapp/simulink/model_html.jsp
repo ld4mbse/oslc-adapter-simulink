@@ -27,7 +27,7 @@
 <%@ page import="java.net.URI"%>
 <%@ page import="java.util.List" %>
 <%@ page import="org.eclipse.lyo.oslc4j.core.model.AbstractResource"%>
-<%@ page import="org.eclipse.lyo.adapter.simulink.resources.SimulinkModel" %>
+<%@ page import="edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel" %>
 <%
 SimulinkModel model = (SimulinkModel)request.getAttribute("model");
 String requestURL = (String)request.getAttribute("requestURL");

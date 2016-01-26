@@ -58,12 +58,12 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
-import org.eclipse.lyo.adapter.simulink.resources.Constants;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkBlock;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkInputPort;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkLine;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkModel;
-import org.eclipse.lyo.adapter.simulink.resources.SimulinkParameter;
+import edu.gatech.mbsec.adapter.simulink.resources.Constants;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkLine;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
+import edu.gatech.mbsec.adapter.simulink.resources.SimulinkParameter;
 import edu.gatech.mbsec.adapter.subversion.SubversionManager;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
