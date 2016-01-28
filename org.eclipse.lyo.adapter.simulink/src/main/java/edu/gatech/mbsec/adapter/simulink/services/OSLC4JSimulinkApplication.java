@@ -354,7 +354,7 @@ public class OSLC4JSimulinkApplication extends OslcWinkApplication {
 		Thread thread = new Thread() {
 			public void start() {
 				ArrayList<FileMetadata> fileMetaDatas = SubversionClient.syncWorkingCopy(svnurl,
-						simulinkModelsDirectory);
+						simulinkModelsDirectory, svnUserName, svnPassword);
 				// convert fileMetaDatas into OSLC POJOs
 				subversionManager.convertFileMetaDataIntoRDFSubversionFileResources(fileMetaDatas);
 			}
