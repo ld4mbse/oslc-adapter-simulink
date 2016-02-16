@@ -7,62 +7,35 @@ the OSLC Simulink Adapter
 
 Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 15, 2016
 ### 1.	Installing OSLC4J
-Follow the instructions in the document named [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
+Follow the [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
 
 
 ### 2.	Installing edu.gatech.mbsec.subversion.client 
-Follow the instructions in the document named [Instructions to install edu.gatech.mbsec.subversion.client](https://github.com/ld4mbse/subversion-client/blob/master/README.md). 
+Follow the [Instructions to install edu.gatech.mbsec.subversion.client](https://github.com/ld4mbse/subversion-client/blob/master/README.md). 
 
-### 3.	Installing edu.gatech.mbsec.subversion.client 
-Follow the instructions in the document named [Instructions to install edu.gatech.mbsec.subversion.client](https://github.com/ld4mbse/subversion-client/blob/master/README.md). 
 
-Clone subversion-client repository
+### 3.	Installing edu.gatech.mbsec.adapter.subversion 
+Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https://github.com/ld4mbse/oslc-adapter-subversion/blob/master/README.md). 
+
+
+### 4.	Downloading edu.gatech.mbsec.adapter.simulink repository 
+
 1.	Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
 2.	Click on the Clone Repository icon  
-3.	In the URI field, paste the following URL: https://github.com/ld4mbse/subversion-client.git 
-4.	The Host and Repository fields will autofill. Enter your credentials in the Username and Password fields.
+3.	In the URI field, paste the following URL: https://github.com/ld4mbse/oslc-adapter-simulink.git 
+4.	The Host and Repository fields will autofill. 
 5.	Click Next, only select the master branch
 6.	Click Next until Finish.
 
-Clone edu.gatech.mbsec.adapter.subversion repository
 
-7.	Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
-8.	Click on the Clone Repository icon  
-9.	In the URI field, paste the following URL: https://github.com/ld4mbse/oslc-adapter-subversion.git 
-10.	The Host and Repository fields will autofill. Enter your credentials in the Username and Password fields.
-11.	Click Next, only select the master branch
-12.	Click Next until Finish.
+### 5.	Importing projects into the Eclipse workspace
 
- 
-Import edu.gatech.mbsec.subversion.client project into Eclipse workspace and build project
-13.	In the Git repositories view, right-click edu.gatech.mbsec.subversion.client and select “Import Projects”. Click Next until Finish
-14.	The edu.gatech.mbsec.subversion.client project is in the Eclipse workspace
-15.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-16.	Expand the edu.gatech.mbsec.subversion.client project
-17.	Right click pom.xml -> Run As -> Maven clean
-18.	Right click pom.xml -> Run As -> Maven install 
-
-Import edu.gatech.mbsec.adapter.subversion into Eclipse workspace and build project
-
-19.	In the Git repositories view, right-click edu.gatech.mbsec.adapter.subversion and select “Import Projects”. Click Next until Finish
-20.	The edu.gatech.mbsec.adapter.subversion project is in the Eclipse workspace
-21.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-22.	Expand the edu.gatech.mbsec.adapter.subversion project
-23.	Right click pom.xml -> Run As -> Maven clean
-24.	Right click pom.xml -> Run As -> Maven install 
-
-3.	Downloading edu.gatech.mbsec.adapter.simulink repository
-
-25.	Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
-26.	Click on the Clone Repository icon  
-27.	In the URI field, paste the following URL: https://github.com/ld4mbse/oslc-adapter-simulink.git 
-28.	The Host and Repository fields will autofill. Enter your credentials in the Username and Password fields.
-29.	Click Next, only select the master branch
-30.	Click Next until Finish.
-4.	Importing projects into the Eclipse workspace
 1.	In the Git repositories view, right-click edu.gatech.mbsec.adapter.simulink and select “Import Projects”. Click Next until Finish
 2.	The 3 projects are in the Eclipse workspace
-5.	Building the edu.gatech.mbsec.adapter.simulink projects
+
+
+### 6. Building the edu.gatech.mbsec.adapter.simulink projects
+
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 2.	Expand the edu.gatech.mbsec.adapter.simulink.ecore project
 3.	Right click pom.xml -> Run As -> Maven clean
@@ -74,18 +47,17 @@ Import edu.gatech.mbsec.adapter.subversion into Eclipse workspace and build proj
 9.	Right click pom.xml -> Run As -> Maven clean
 10.	Right click pom.xml -> Run As -> Maven install 
 
-If there is no error mark next to any project, you can skip the next steps.
-11.	If there is a red error mark next to any project, select the project. Right-click->Maven->Update Project… and click OK 
-12.	Make sure that the Eclipse projects displayed in the project explorer view do not contain any error icons displayed next to the project names as for example displayed below. 
+#####Troubleshooting
 
- 
+######Red error mark next to a project
 
-If a project has an error icon, then select the project and open its properties view (Project->right click->Properties). Under the Projects Facet tab, make sure that 1.8 is selected.
+1.	If there is a red error mark next to any project, select the project. Right-click->Maven->Update Project… and click OK 
+2.	Make sure that the Eclipse projects displayed in the project explorer view do not contain any error icons displayed next to the project names as for example displayed below. 
+3. Select the project and open its properties view (Project->right click->Properties). Under the Projects Facet tab, make sure that 1.8 is selected.
+4. Select the project, right-click -> Properties. Select Java Compiler and select 1.8 in the drop down menu next to the JDK compliance setting as highlighted below.
 
-If a project still shows an error, then change its JDK compliance to 1.8. Select the project, right-click -> Properties. Select Java Compiler and select 1.8 in the drop down menu next to the JDK compliance setting as highlighted below.
 
-
-6.	Manual configuration 
+### 7.	Manual configuration 
 
 The OSLC Simulink adapter currently supports the retrieval of Simulink models within a specific directory. The location of the directory containing the Simulink projects is currently hard coded in a configuration file. Several Simulink models are already located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. 
 The OSLC Simulink adapter currently supports the retrieval of Simulink models within 
