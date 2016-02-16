@@ -7,11 +7,14 @@ the OSLC Simulink Adapter
 
 Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 15, 2016
 ### 1.	Installing OSLC4J
-1. Follow the instructions in the document named [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
+Follow the instructions in the document named [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
 
 
-### 2.	Download, import, and build edu.gatech.mbsec.subversion.client and adapter.subversion projects
-1. Follow the instructions in the document named [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). 
+### 2.	Installing edu.gatech.mbsec.subversion.client 
+Follow the instructions in the document named [Instructions to install edu.gatech.mbsec.subversion.client](https://github.com/ld4mbse/subversion-client/blob/master/README.md). 
+
+### 3.	Installing edu.gatech.mbsec.subversion.client 
+Follow the instructions in the document named [Instructions to install edu.gatech.mbsec.subversion.client](https://github.com/ld4mbse/subversion-client/blob/master/README.md). 
 
 Clone subversion-client repository
 1.	Open the Git Repositories View (Window -> Show View -> type “Git Repositories” in the search field)
