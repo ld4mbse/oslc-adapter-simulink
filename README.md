@@ -59,21 +59,24 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 
 ### 7.	Manual configuration 
 
-The OSLC Simulink adapter currently supports the retrieval of Simulink models within a specific directory. The location of the directory containing the Simulink projects is currently hard coded in a configuration file. Several Simulink models are already located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. 
-The OSLC Simulink adapter currently supports the retrieval of Simulink models within 
-a.	a specific local directory – “Local mode”
+The OSLC Simulink adapter currently supports the retrieval of Simulink models 
++ within a specific local directory on the server 
++ within a subversion  repository
++ from individuals files hosted on the same or on different subversion  repositories
 
-Specify the location of the folder containing Simulink models which will be considered by the OSLC Simulink adapter in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the location of the folder containing Simulink models for the OSLC adapter is specified to C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/
+#### Retrieval of Simulink models from a local directory - "local mode"
 
+Specify the location of the folder containing Simulink models which will be considered by the OSLC Simulink adapter in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the location of the folder containing Simulink models for the OSLC adapter is specified to
+```text
+C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/
+```
 Note: The file path can contain backslashes
-
 Warning: Do not put quotes around the file path!
 
-b.	or from a subversion repository – “SVN Repository mode”
+#### Retrieval of Simulink models from a subversion repository - "SVN Repository mode"
 
-Set the value of syncWithSvnRepo to true
-
-Specify the Subversion repository URL containing Simulink models which will be considered by the OSLC Simulink adapter in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the Subversion repository URL  is specified to be https://mysvnrepos.com/svn/simulinkrepository/
+1. Set the value of syncWithSvnRepo to true n the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration
+2. Specify the Subversion repository URL containing Simulink models which will be considered by the OSLC Simulink adapter in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the Subversion repository URL  is specified to be https://mysvnrepos.com/svn/simulinkrepository/
 
 Warning: Do not put quotes around the file path!
 
