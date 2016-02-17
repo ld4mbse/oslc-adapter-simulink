@@ -162,6 +162,29 @@ https://tomcat.apache.org/download-80.cgi
 14.	Enter the Tomcat 8.0 installation directory (not the Apache installation directory!) as highlighted below.
 15.	Click on Finish.
 
+#### Enabling PUT on Apache Tomcat
+
+Tomcat by default is not enabled for HTTP PUT command. But, it can easily be configured to support it.
+1.	In your Apache Tomcat 8 installation directory, open /conf/web.xml
+2.	Add the readonly init param to the web.xml file as shown below and save the file
+ ```text
+        <init-param>
+            		<param-name>readonly</param-name>
+            		<param-value>false</param-value>
+        </init-param>
+```
+Note: If you get the warning shown below while trying to save the file, then copy the web.xml file into another location, modify it, and then replace the original web.xml file by the modified web.xml file.
+ 
+
+#### Setting the Apache Tomcat server port 
+
+1.	By default, the OSLC Simulink adapter service will run on port 8181. Change the port of the oslc4jsimulink service only if you need to avoid a conflict with another service already running on port 8181. Skip the next steps if you do not need to change the port. 
+2.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+3.	Expand the edu.gatech.mbsec.adapter.simulink project
+4.	Select and open the maven pom.xml file through double-click
+5.	The pom.xml file contains several tabs. By default, the overview tab will be displayed. The various available tabs are displayed at the bottom of the editor window. Click on the pom.xml tab of the pom.xml.
+6.	In the pom.xml tab of the pom.xml file, specify the port of the OSLC Simulink adapter service in the Maven tomcat plugin configuration found at the bottom of the pom.xml tab of the pom.xml file. Enter the port number in the configuration section.
+
 ####	Configuring Tomcat user roles and passwords (only useful for deploying adapter as war on standalone Tomcat)
 
 In the /conf folder of the Tomcat installation directory, add in tomcat-users.xml inside the <tomcat-users> tag the following user tag
@@ -193,30 +216,6 @@ In the maven user/.m2/ (Example: C:\Users\Axel\.m2) folder, add in settings.xml 
 ```
 Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it only officially supports Tomcat 7. There is no Tomcat Maven plugin for Tomcat 8 at this point. 
 
-  
-#### Enabling PUT on Apache Tomcat
-
-Tomcat by default is not enabled for HTTP PUT command. But, it can easily be configured to support it.
-1.	In your Apache Tomcat 8 installation directory, open /conf/web.xml
-2.	Add the readonly init param to the web.xml file as shown below and save the file
- ```text
-        <init-param>
-            		<param-name>readonly</param-name>
-            		<param-value>false</param-value>
-        </init-param>
-```
-Note: If you get the warning shown below while trying to save the file, then copy the web.xml file into another location, modify it, and then replace the original web.xml file by the modified web.xml file.
- 
-
-#### Setting the Apache Tomcat server port 
-
-1.	By default, the OSLC Simulink adapter service will run on port 8181. Change the port of the oslc4jsimulink service only if you need to avoid a conflict with another service already running on port 8181. Skip the next steps if you do not need to change the port. 
-2.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-3.	Expand the edu.gatech.mbsec.adapter.simulink project
-4.	Select and open the maven pom.xml file through double-click
-5.	The pom.xml file contains several tabs. By default, the overview tab will be displayed. The various available tabs are displayed at the bottom of the editor window. Click on the pom.xml tab of the pom.xml.
-6.	In the pom.xml tab of the pom.xml file, specify the port of the OSLC Simulink adapter service in the Maven tomcat plugin configuration found at the bottom of the pom.xml tab of the pom.xml file. Enter the port number in the configuration section.
- 
 
 ### 10.	Installing the Chrome/Firefox Postman plugin (or any REST client)
 
@@ -226,10 +225,10 @@ Note: If you get the warning shown below while trying to save the file, then cop
 2.	*And the [Postman launcher](https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en)*
 
 
-
 ### 11.		Launching oslc4jsimulink (OSLC Simulink Adapter)
 
 There are several options
+
 1. Deploying OSLC Simulink adapter on Tomcat server embedded in Eclipse launched through Maven
 2. Deploying OSLC Simulink adapter on standalone Tomcat server manually
 3. Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse
@@ -242,7 +241,7 @@ There are several options
 2. *Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command (Example:  cd C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24\bin)*
 3. *Launch Tomcat by running the following command: catalina start* 
 
-#### Deploying OSLC Simulink adapter on Tomcat server embedded in Eclipse launched through Maven
+#### Option #1: Deploying OSLC Simulink adapter on Tomcat server embedded in Eclipse launched through Maven
 Select the oslc4jsimulink launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for simulink** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
 
 Warning: If the OSLC Simulink adapter service fails to launch due to a java.net.BindException, a different port for the OSLC Simulink adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC Simulink adapter uses port 8181. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
@@ -253,7 +252,7 @@ Note: If you launch the Maven launch configuration (OSLC Simulink adapter) in de
 
 
 
-#### Deploying OSLC Simulink adapter on standalone Tomcat server manually
+#### Option #2: Deploying OSLC Simulink adapter on standalone Tomcat server manually
 1. Option 1)
 	1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 	2. Expand the org.eclipse.lyo.adapter.Simulink project
@@ -266,10 +265,15 @@ Note: If you launch the Maven launch configuration (OSLC Simulink adapter) in de
 	3. If asked for your credentials, type in admin as user name and password
 	4. In the Deploy section, select the WAR file to upload using the dialog shown below.
 
-#### Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse
+#### Option #3: Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse
 Run the Maven launch configuration named **oslc adapter for simulink tomcat deploy**
 
-#### Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
+#### Option #4: Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
+
+1. First launch the remote java application named remote debugger oslc4jsimulink on tomcat by choosing in Eclipse Debug-> Debug Configurations… , and then run the remote java application
+ii.	And then run the Maven launch configuration named oslc4jsimulink  tomcat deploy debug
+
+
 Run the Maven launch configuration named **oslc adapter for simulink tomcat deploy**
 
 15.	Testing the OSLC Simulink Adapter
