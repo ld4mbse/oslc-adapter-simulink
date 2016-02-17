@@ -1,4 +1,4 @@
-#Java-based Implementation of OSLC Simulink Adapter
+#OSLC Simulink Adapter
 
 
 
