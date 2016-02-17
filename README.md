@@ -225,7 +225,7 @@ Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it o
 2.	*And the [Postman launcher](https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en)*
 
 
-### 11.		Launching oslc4jsimulink (OSLC Simulink Adapter)
+### 11.	Launching the OSLC Simulink Adapter
 
 There are several options
 
@@ -281,42 +281,25 @@ Run the Maven launch configuration named **oslc adapter for simulink tomcat depl
 2. And then run the Maven launch configuration named **oslc4jsimulink tomcat deploy debug**
 
 
+### 12.	Testing the OSLC Simulink Adapter
+
+#### Testing the retrieval of OSLC resources in HTML
+
+1. Launch your web browser Google Chrome
+2. In the URL field, type for test purposes: [http://localhost:8181/oslc4jsimulink/services/catalog/singleton](http://localhost:8181/oslc4jsimulink/services/catalog/singleton). This will send a HTTP GET request to retrieve the HTML representation of the Simulink Service Provider Catalog. This will launch a Matlab command window which will close automatically. The Matlab command window may display warnings if it is an older version than R2013b.
+3. You will then see an HTML page showing you the list of Service Providers. You can browse from the Service Providers (e.g. for model11) to the Services and ultimately to the OSLC Simulink resources.
 
 
-15.	Testing the OSLC Simulink Adapter
+#### Testing the retrieval of OSLC resources in RDF
 
-Testing the retrieval of OSLC resources in HTML
-1.	Launch Google Chrome
-2.	In the URL field, type for test purposes: http://localhost:8181/oslc4jsimulink/services/catalog/singleton. This will send a HTTP GET request to retrieve the HTML representation of the Simulink Service Provider Catalog. This will launch a Matlab command window which will close automatically. The Matlab command window may display warnings if it is an older version than R2013b.
-3.	You will then see an HTML page showing you the list of Service Providers. You can browse from the Service Providers (e.g. for model11) to the Services and ultimately to the OSLC Simulink resources.
-l  
+1. Click on the Postman icon at the top right of the Chrome browser . A new tab will open. 
+2. In the URL field, type for test purposes the URI of a resource published by the Simulink adapter (Example: http://localhost:8181/oslc4jsimulink/services/model1/blocks/Constant). 
+3. Click on the Headers field to the right of the URL field
+4. Enter Accept in the Header field and application/rdf+xml in the value field as shown below
+5. Click Send
+6. This will send a HTTP GET request to retrieve the RDF/XML representation of the Simulink block.
 
- 
-
-
- 
- 
-
-
-
- 
- 
-Testing the retrieval of OSLC resources in RDF
-1.	Click on the Postman icon at the top right of the Chrome browser . A new tab will open. 
-2.	In the URL field, type for test purposes: http://localhost:8181/oslc4jsimulink/services/model1/blocks/Constant. 
-3.	Click on the Headers field to the right of the URL field
-4.	Enter Accept in the Header field and application/rdf+xml in the value field as shown below
-5.	Click Send
-
- 
-
-6.	This will send a HTTP GET request to retrieve the RDF/XML representation of the Simulink block named “Constant”.
-
-The Postman REST client will display the RDF/XML representation of the Simulink block named “constant”. Other HTTP requests to retrieve other SysML elements can be sent. 
- 
-16.	Testing the OSLC Simulink Adapter through example Simulink model
-The edu.gatech.mbsec.adapter.simulink project contains example Simulink models containing different types of Simulink elements. The example models are located in the folder named matlab. 
-model11 contains blocks, subsystems, model reference blocks, ports, lines, and lines with multiple target ports 
+The edu.gatech.mbsec.adapter.simulink project contains example Simulink models containing different types of Simulink elements. The example models are located in the folder [simulinkmodels](/org.eclipse.lyo.adapter.simulink/simulinkmodels). Model [model11](org.eclipse.lyo.adapter.simulink/simulinkmodels/model11.slx) contains blocks, subsystems, model reference blocks, ports, lines, and lines with multiple target ports 
  
 
 
