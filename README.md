@@ -169,10 +169,10 @@ Tomcat by default is not enabled for HTTP PUT command. But, it can easily be con
 1.	In your Apache Tomcat 8 installation directory, open /conf/web.xml
 2.	Add the readonly init param to the web.xml file as shown below and save the file
  ```text
-         <init-param>
+        <init-param>
             		<param-name>readonly</param-name>
             		<param-value>false</param-value>
-        	</init-param>
+        </init-param>
 ```
 Note: If you get the warning shown below while trying to save the file, then copy the web.xml file into another location, modify it, and then replace the original web.xml file by the modified web.xml file.
  
@@ -189,9 +189,14 @@ Note: If you get the warning shown below while trying to save the file, then cop
 
 ### 10.	Installing the Chrome/Firefox Postman plugin (or any REST client)
 
-1.	For Google Chrome, add the Postman REST client to your browser: https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en
-2.	And the Postman launcher: https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en
-14.	Launching oslc4jsimulink (OSLC Simulink Adapter)
+*Optional - only useful if you want to use this REST client*
+
+1.	*For Google Chrome, add the [Postman REST client](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) to your browser* 
+2.	*And the [Postman launcher](https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en)*
+
+
+
+### 11.		Launching oslc4jsimulink (OSLC Simulink Adapter)
 
 Select the oslc4jsimulink launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named oslc adapter for simulink) and click Run.
 In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
