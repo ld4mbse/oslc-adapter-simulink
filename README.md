@@ -237,6 +237,7 @@ There are several options
 
 ##### *Optional: Launching Tomcat server manually*
 *For all options except 1), you need to launch the Tomcat server*
+
 1. *Open a command prompt*
 2. *Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command (Example:  cd C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24\bin)*
 3. *Launch Tomcat by running the following command: catalina start* 
