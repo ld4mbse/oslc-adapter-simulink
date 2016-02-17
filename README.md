@@ -16,9 +16,9 @@
 
 
 
-##Instructions to install and run the OSLC Simulink Adapter (for Matlab R2013b, 2014a, 2014b, 2015)
+##Instructions to install and run OSLC Simulink Adapter (for Matlab R2013b, 2014a, 2014b, 2015)
 
-Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 15, 2016
+Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 16, 2016
 ### 1.	Installing OSLC4J
 Follow the [Instructions to install Eclipse Lyo](https://github.com/ld4mbse/oslc4j/edit/master/README.md). The document also contains instructions on how to use a proxy server with Maven and Eclipse. 
 
