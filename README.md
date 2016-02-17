@@ -170,13 +170,13 @@ In the /conf folder of the Tomcat installation directory, add in tomcat-users.xm
 ```
 Note: Manager-script role is necessary to enable Maven deploy 
   
-####	Copying adapter congiguration properties (only useful for deploying adapter as war on standalone Tomcat)
+####	Copying adapter configuration properties (only useful for deploying adapter as war on standalone Tomcat)
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 2.	Expand the edu.gatech.mbsec.adapter.simulink project
 3.	Copy the folder named oslc4jsimulink configuration
 4.	Paste the folder in the Tomcat installation directory (Example: C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24/oslc4jsimulink  configuration)
 
-####	Maven congiguration properties (only useful for deploying adapter as war on standalone Tomcat) 
+####	Maven configuration properties (only useful for deploying adapter as war on standalone Tomcat) 
 
 In the maven user/.m2/ (Example: C:\Users\Axel\.m2) folder, add in settings.xml the following
 ```xml
@@ -229,19 +229,47 @@ Note: If you get the warning shown below while trying to save the file, then cop
 
 ### 11.		Launching oslc4jsimulink (OSLC Simulink Adapter)
 
-Select the oslc4jsimulink launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named oslc adapter for simulink) and click Run.
-In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
-The OSLC Simulink adapter is running and following statements can be seen in the Eclipse Console windows displayed below
- 
- Warning: If the OSLC Simulink adapter service fails to launch due to a java.net.BindException, a different port for the OSLC Simulink adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC Simulink adapter uses port 8181. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
- 
-Note: In order to stop a running oslc4jsimulink web application, click Terminate in the Console window, as shown below, or in the toolbar of the debug perspective.
- 
+There are several options
+1. Deploying OSLC Simulink adapter on Tomcat server embedded in Eclipse launched through Maven
+2. Deploying OSLC Simulink adapter on standalone Tomcat server manually
+3. Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse
+4. Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
+
+##### *Optional: Launching Tomcat server manually*
+*For all options except 1), you need to launch the Tomcat server*
+1. *Open a command prompt*
+2. *Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command (Example:  cd C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24\bin)*
+3. *Launch Tomcat by running the following command: catalina start* 
+
+#### Deploying OSLC Simulink adapter on Tomcat server embedded in Eclipse launched through Maven
+Select the oslc4jsimulink launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for simulink** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
+
+Warning: If the OSLC Simulink adapter service fails to launch due to a java.net.BindException, a different port for the OSLC Simulink adapter needs to be used since there is a conflict with another service using the same port. By default, the OSLC Simulink adapter uses port 8181. A java.net.BindException means that a different service is already using this port. Go back to Steps #5 and #10 to change the port number.
+
+Note: In order to stop a running oslc4jsimulink web application, click Terminate in the Console window, or in the toolbar of the debug perspective.
 
 Note: If you launch the Maven launch configuration (OSLC Simulink adapter) in debug mode, and do not see the Java code when the application hits a breakpoint, then you need to add the Eclipse workspace to the source lookup path. In the Debug view, right click on the running thread (in threads tab), or on the application as shown below and select Edit Source Lookup, and add the workspace. Re-launch the Maven launch configuration and the code should be visible in the editor when the application hits a breakpoint. 
 
- 
- 
+
+
+#### Deploying OSLC Simulink adapter on standalone Tomcat server manually
+1. Option 1)
+	1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+	2. Expand the org.eclipse.lyo.adapter.Simulink project
+	3. Open the /target folder 
+	4. rename the oslc4jsimulink -0.1.0.war file into oslc4jsimulink .war 
+	5. copy oslc4jsimulink .war into the /webapps folder of the of the Tomcat installation directory
+2. Option 2)
+	1. In your browser go to localhost:8080
+	2. Click on Manager App
+	3. If asked for your credentials, type in admin as user name and password
+	4. In the Deploy section, select the WAR file to upload using the dialog shown below.
+
+#### Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse
+Run the Maven launch configuration named **oslc adapter for simulink tomcat deploy**
+
+#### Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
+Run the Maven launch configuration named **oslc adapter for simulink tomcat deploy**
 
 15.	Testing the OSLC Simulink Adapter
 
