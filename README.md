@@ -139,7 +139,7 @@ Warning: Do not choose as local Subversion file storage the same folder as the o
 
 ### 9. Installing Apache Tomcat
 
-*Optional: This step are only necessary if you want to use a specific Tomcat instance instead of the Tomcat instance embedded in Eclipse and downloaded by the Maven Tomcat plugin. This step are only necessary if you want:*
+*Optional: This step is only necessary if you want to use a specific Tomcat instance instead of the Tomcat instance embedded in Eclipse and downloaded by the Maven Tomcat plugin. This step is only necessary if you want:*
 - *to deploy the Simulink adapter on a specific Tomcat instance (possibly with specific configurations)*
 - *to deploy the Simulink adapter such that it accepts HTTP PUT requests, necessary for updating Simulink parameters*
 
@@ -155,14 +155,12 @@ https://tomcat.apache.org/download-80.cgi
 7.	Test that environment variables **JAVA_HOME** and **PATH** respectively point to JDK and JDK/bin. Verify this on Windows by typing in the command prompt echo %JAVA_HOME% and echo %PATH%. If necessary set the envornoment variable in the command prompt using the set command (Example: set variable=string). After having set the environment variables, open a  new ommand prompt to verify the values of the environment variables.
 8.	Make sure that JAVA_HOME and JRE_HOME both point to the same Java version, for example Java 8. 
 9.	Make sure that CATALINA_HOME points to the correct installation directory of your Tomcat distribution. 
-
 10.	Adding Server Runtime Environment in Eclipse
-1.	In Eclipse. Open Window -> Preferences -> Server -> Runtime Environments to create a Tomcat installed runtime.
-2.	Click on Add... to open the New Server Runtime dialog, 
-3.	From the drop down menu, select Tomcat 8.0 as shown below. Click Next.
-  
-4.	Enter the Tomcat 8.0 installation directory (not the Apache installation directory!) as highlighted below.
-5.	Click on Finish.
+11.	In Eclipse. Open Window -> Preferences -> Server -> Runtime Environments to create a Tomcat installed runtime.
+12.	Click on Add... to open the New Server Runtime dialog, 
+13.	From the drop down menu, select Tomcat 8.0 as shown below. Click Next.
+14.	Enter the Tomcat 8.0 installation directory (not the Apache installation directory!) as highlighted below.
+15.	Click on Finish.
 
   
 #### Enabling PUT on Apache Tomcat
@@ -171,7 +169,7 @@ Tomcat by default is not enabled for HTTP PUT command. But, it can easily be con
 1.	In your Apache Tomcat 8 installation directory, open /conf/web.xml
 2.	Add the readonly init param to the web.xml file as shown below and save the file
  ```text
-<init-param>
+         <init-param>
             		<param-name>readonly</param-name>
             		<param-value>false</param-value>
         	</init-param>
@@ -189,7 +187,7 @@ Note: If you get the warning shown below while trying to save the file, then cop
 6.	In the pom.xml tab of the pom.xml file, specify the port of the OSLC Simulink adapter service in the Maven tomcat plugin configuration found at the bottom of the pom.xml tab of the pom.xml file. Enter the port number in the configuration section.
  
 
-13.	Installing the Chrome/Firefox Postman plugin (or any REST client)
+### 10.	Installing the Chrome/Firefox Postman plugin (or any REST client)
 
 1.	For Google Chrome, add the Postman REST client to your browser: https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en
 2.	And the Postman launcher: https://chrome.google.com/webstore/detail/postman-launcher/igofndmniooofoabmmpfonmdnhgchoka?hl=en
