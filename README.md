@@ -162,7 +162,7 @@ https://tomcat.apache.org/download-80.cgi
 14.	Enter the Tomcat 8.0 installation directory (not the Apache installation directory!) as highlighted below.
 15.	Click on Finish.
 
-####	Configuring Tomcat user roles and passwords
+####	Configuring Tomcat user roles and passwords (only useful for deploying adapter as war on standalone Tomcat)
 
 In the /conf folder of the Tomcat installation directory, add in tomcat-users.xml inside the <tomcat-users> tag the following user tag
 ```xml
@@ -170,7 +170,7 @@ In the /conf folder of the Tomcat installation directory, add in tomcat-users.xm
 ```
 Note: Manager-script role is necessary to enable Maven deploy 
   
-####	Configuring Simulink adapter for standalone deployment on Tomcat  
+####	Copying adapter congiguration properties (only useful for deploying adapter as war on standalone Tomcat)
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 2.	Expand the edu.gatech.mbsec.adapter.simulink project
 3.	Copy the folder named oslc4jsimulink configuration
