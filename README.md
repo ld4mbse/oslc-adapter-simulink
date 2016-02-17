@@ -127,12 +127,12 @@ Warning: Do not choose as local Subversion file storage the same folder as the o
 2.	From the File menu, select Set Path…(if your Matlab version has a ribbon-based user interface such as inR2013, choose Set Path in the Home ribbon in the Environment section)
 3.	Use the **Add Folder…** command to add the matlab folder of the oslc4jsimulink project to the Matlab search path based on the location of your local git repository
 4. Use the **Add with Subfolders…** command to add the folder in the oslc4jsimulink project containing Simulink models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path in “local mode”  
- ```text
-“C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/”
+```text
+C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/
 ```
   and in “SVN repository mode” and “Individual SVN files mode”:
-  ```text
- C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs” 
+ ```text
+  C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs
  ```
 5.	Click Save and then Close
  
