@@ -75,26 +75,22 @@ Warning: Do not put quotes around the file path!
 
 #### b. Retrieval of Simulink models from a subversion repository - "SVN Repository mode"
 
-1. Set the value of syncWithSvnRepo to true n the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration
-2. Specify the Subversion repository URL containing Simulink models which will be considered by the OSLC Simulink adapter in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the Subversion repository URL  is specified to be 
-```text
+ 1. Set the value of syncWithSvnRepo to true n the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration
+ 2. Specify the Subversion repository URL containing Simulink models which will be considered by the OSLC Simulink adapter in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the Subversion repository URL  is specified to be 
+ ```text
 https://mysvnrepos.com/svn/simulinkrepository
 ```
-
 Warning: Do not put quotes around the file path!
-
-3. Set the time period in seconds at which the adapter will poll the Subversion repository for updates. Example:  
-```text
+ 3. Set the time period in seconds at which the adapter will poll the Subversion repository for updates. Example:  
+ ```text
 delayInSecondsBetweenDataRefresh = none
 ``` 
 or
-```text
+ ```text
 delayInSecondsBetweenDataRefresh = 90
 ```
-
-4. Specify your Subversion credentials through the svnUserName and svnPassword fields
-
-5. Specify the location of the folder containing Simulink models where the Subversion files will be saved locally in config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the location of the folder containing Simulink models for the OSLC adapter is specified to 
+ 4. Specify your Subversion credentials through the svnUserName and svnPassword fields
+ 5. Specify the location of the folder containing Simulink models where the Subversion files will be saved locally in config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the location of the folder containing Simulink models for the OSLC adapter is specified to 
 ```text
 C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs
 ```
