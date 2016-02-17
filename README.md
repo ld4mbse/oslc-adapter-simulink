@@ -241,6 +241,13 @@ There are several options
 2. *Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command (Example:  cd C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24\bin)*
 3. *Launch Tomcat by running the following command: catalina start* 
 
+*For all options except 1), if you wish to stop the Tomcat server*
+
+1. *Open a command prompt*
+2. *Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command* 
+3. *Stop Tomcat by running the following command: shutdown –force. Note: It is important to avoid a memory problem by using shutdown –force, else the OSLC Simulink adapter can cause a memory leak*
+
+
 #### Option #1: Deploying OSLC Simulink adapter on Tomcat server embedded in Eclipse launched through Maven
 Select the oslc4jsimulink launch configuration (Run -> Run Configurations… and select in the Maven build category the launch configuration named **oslc adapter for simulink** and click Run. In the console window, several logging related exceptions will appear (SLF4J and log4j). This is not critical.
 
@@ -270,11 +277,11 @@ Run the Maven launch configuration named **oslc adapter for simulink tomcat depl
 
 #### Option #4: Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
 
-1. First launch the remote java application named remote debugger oslc4jsimulink on tomcat by choosing in Eclipse Debug-> Debug Configurations… , and then run the remote java application
-ii.	And then run the Maven launch configuration named oslc4jsimulink  tomcat deploy debug
+1. First launch the remote java application named **remote debugger oslc4jsimulink on tomcat** by choosing in Eclipse Debug-> Debug Configurations… , and then run the remote java application
+2. And then run the Maven launch configuration named **oslc4jsimulink tomcat deploy debug**
 
 
-Run the Maven launch configuration named **oslc adapter for simulink tomcat deploy**
+
 
 15.	Testing the OSLC Simulink Adapter
 
