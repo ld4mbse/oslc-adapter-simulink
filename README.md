@@ -1,9 +1,8 @@
-#oslc-adapter-simulink
-##Java-based Implementation of OSLC Simulink Adapter
+#Java-based Implementation of OSLC Simulink Adapter
 
 
 
-## Overview of RESTful web services provided by OSLC Simulink Adapter
+## Overview of RESTful web services 
 
 | Simulink Concept  	| GET	| POST	| PUT	| 	DELETE	|
 | ------------- 	| ------|-------|----	|------		|
@@ -13,6 +12,9 @@
 | Input Port  		| X 	| X	| 	| 		|
 | OutputPort  		| X 	| X	| 	| 		|
 | Parameter  		| X 	| X	| X	| 		|
+
+
+
 
 ##Instructions to install and run the OSLC Simulink Adapter (for Matlab R2013b, 2014a, 2014b, 2015)
 
