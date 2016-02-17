@@ -59,10 +59,18 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 
 ### 7.	Manual configuration 
 
-The OSLC Simulink adapter currently supports the retrieval of Simulink models 
-+ within a specific local directory on the server 
-+ within a subversion  repository
-+ from individuals files hosted on the same or on different subversion  repositories
+Specify the port number of the OSLC Simulink adapter service of in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. By default, port 8181 will be used. As an example displayed below, the port number is set to 8181.
+
+*Optional - only useful if you want to re-generate the OSLC4J-annotated Java classes*
+*Specify the location of Simulink Ecore file in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. The location of the Simulink ecore file named simulink.ecore is in the edu.gatech.mbsec.adapter.simulink.ecore project under /model/simulink.ecore. As an example displayed below, the location of the simulink.ecore file is specified to*
+ ```textC:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink.ecore /model/simulink.ecore```*
+*Note: The file path can contain backslashes*
+*Warning: Do not put quotes around the file path and add nothing at the end!*
+
+**The OSLC Simulink adapter currently supports the retrieval of Simulink models** 
++ **within a specific local directory on the server**
++ **within a subversion  repository**
++ **from individuals files hosted on the same or on different subversion  repositories**
 
 #### a. Retrieval of Simulink models from a local directory - "local mode"
 
@@ -91,35 +99,29 @@ delayInSecondsBetweenDataRefresh = 90
 ```
  4. Specify your Subversion credentials through the svnUserName and svnPassword fields
  5. Specify the location of the folder containing Simulink models where the Subversion files will be saved locally in config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the location of the folder containing Simulink models for the OSLC adapter is specified to 
-```text
+ ```text
 C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs
 ```
 
 #### c.	Retrieval of Simulink models from individual Subversion-hosted files - “Individual SVN files mode”
 
 1. Set the value of useIndividualSubversionFiles to true
-
 2.	Specify the Subversion file URLs representing Simulink models which will be published by the adapter at startup in the subversionfiles.csv file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the Subversion file URLs  are specified to be
-```text
+ ```text
 https://koneksys1:18080/svn/repository1/model11.slx
 https://koneksys1:18080/svn/repository1/model4.slx
 ``` 
 
 3.	During adapter runtime, you can change the Subversion files to be published through the web app at [http://localhost:8080/oslc4jsimulink/services/svnfilepublisher](http://localhost:8080/oslc4jsimulink/services/svnfilepublisher)
-
 Note: the port number may differ from 8080 if specified differently in thr config.properties file
- 
 By clicking on Publish, the adapter will retrieve the latest version of the Subversion files and publish them 
-
 4.	Specify your Subversion credentials through the svnUserName and svnPassword fields
-
 5.	Specify the location of the folder containing Simulink models where the Subversion files will be saved locally in config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. As an example displayed below, the location of the folder containing Simulink models for the OSLC adapter is specified to 
-```text
+ ```text
 C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs
 ``` 
 
 Note: The contents of this folder will be deleted when the adapter starts in individualSubversionFile mode.  
-
 Warning: Do not choose as local Subversion file storage the same folder as the one containing all sample Simulink models, nor the one containing the local Simulink models models without Subversion info.  
 Several example Simulink models are located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. 
 
@@ -127,13 +129,7 @@ Following steps are also necessary to configure the adapter:
 
 
 
-1.	Specify the location of Simulink Ecore file in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. The location of the Simulink ecore file named simulink.ecore is in the edu.gatech.mbsec.adapter.simulink.ecore project under /model/simulink.ecore. As an example displayed below, the location of the simulink.ecore file is specified to C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink.ecore /model/simulink.ecore
 
-Note: The file path can contain backslashes
-
-Warning: Do not put quotes around the file path and add nothing at the end!
-
-2.	Specify the port number of the OSLC Simulink adapter service of in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. By default, port 8181 will be used. As an example displayed below, the port number is set to 8181.
 
  
 
