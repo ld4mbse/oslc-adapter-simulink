@@ -78,8 +78,7 @@ Specify the location of the folder containing Simulink models which will be cons
 ```text
 C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/
 ```
-Note: The file path can contain backslashes
-Warning: Do not put quotes around the file path!
+Several example Simulink models are located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. Note: The file path can contain backslashes. Warning: Do not put quotes around the file path!
 
 #### b. Retrieval of Simulink models from a subversion repository - "SVN Repository mode"
 
@@ -111,7 +110,6 @@ C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdi
 https://koneksys1:18080/svn/repository1/model11.slx
 https://koneksys1:18080/svn/repository1/model4.slx
 ``` 
-
 3.	During adapter runtime, you can change the Subversion files to be published through the web app at [http://localhost:8080/oslc4jsimulink/services/svnfilepublisher](http://localhost:8080/oslc4jsimulink/services/svnfilepublisher)
 Note: the port number may differ from 8080 if specified differently in thr config.properties file
 By clicking on Publish, the adapter will retrieve the latest version of the Subversion files and publish them 
@@ -120,31 +118,24 @@ By clicking on Publish, the adapter will retrieve the latest version of the Subv
  ```text
 C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs
 ``` 
-
 Note: The contents of this folder will be deleted when the adapter starts in individualSubversionFile mode.  
 Warning: Do not choose as local Subversion file storage the same folder as the one containing all sample Simulink models, nor the one containing the local Simulink models models without Subversion info.  
-Several example Simulink models are located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. 
-
-Following steps are also necessary to configure the adapter:
-
-
-
-
-
  
 
-7.	Setting up the Matlab workspace
+### 8.	Setting up the Matlab workspace
 1.	Launch Matlab 
 2.	From the File menu, select Set Path…(if your Matlab version has a ribbon-based user interface such as inR2013, choose Set Path in the Home ribbon in the Environment section)
-
- 
-3.	Use the Add Folder… command to add the matlab folder of the oslc4jsimulink project to the Matlab search path as shown below based on the location of your local git repository
-Use the Add with Subfolders… command to add the folder in the oslc4jsimulink project containing Simulink models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path 
-o	In “local mode”: “C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/”
-o	In “SVN repository mode” and “Individual SVN files mode”:
-“C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs” 
-
-4.	Click Save and then Close
+3.	Use the **Add Folder…** command to add the matlab folder of the oslc4jsimulink project to the Matlab search path based on the location of your local git repository
+4. Use the **Add with Subfolders…** command to add the folder in the oslc4jsimulink project containing Simulink models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path 
+ i. In “local mode”: 
+ ```text
+“C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/”
+```
+ ii. In “SVN repository mode” and “Individual SVN files mode”:
+ ```text
+ C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs” 
+```
+5.	Click Save and then Close
  
 
 8.	Installing Apache Tomcat
