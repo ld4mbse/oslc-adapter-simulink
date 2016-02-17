@@ -148,7 +148,7 @@ C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Model
 1.	Download Tomcat 8 by going to this page:
 https://tomcat.apache.org/download-80.cgi 
 2.	Download the zip distribution for your operating system. Note: do not use the windows installer as it doesn’t install all Tomcat scripts. 
-3.	Unzip the Tomcat 8 distribution in a folder where your user account has read/write permission. Note: Windows disables direct file access to programs folder for normal users per default. Note: Installation of XAMPP can mess up previous installations of Tomcat and may need to be removed
+3.	Unzip the Tomcat 8 distribution in a folder where your user account has read/write permission. Note: Windows disables direct file access to programs folder for normal users per default. 
 4.	Make sure that the /bin folder in your Tomcat installation directory contains the catalina.bat batch file 
 5.	Make sure that you have JDK 8 installed on your machine. OSLC Adapters are now currently being build with Java 8 compilers. So Tomcat should also run with Java 8. 
 6.	On Windows, verify your installed Java version by typing in the command prompt java –version
@@ -172,10 +172,10 @@ Note: Manager-script role is necessary to enable Maven deploy
   
 ####	Configuring Simulink adapter for standalone deployment on Tomcat  
 1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-2.	Expand the org.eclipse.lyo.adapter.Simulink project
+2.	Expand the edu.gatech.mbsec.adapter.simulink project
 3.	Copy the folder named oslc4jsimulink configuration
-4.	Paste the folder in the Tomcat installation directory (Example: apache-tomcat-7.0.59/oslc4jsimulink  configuration)
-5.	Change the port number of the OSLC Simulink adapter service of in the config.properties file under in the /oslc4jsimulink configuration folder. By default, port 8080 will be used. As an example displayed below, the port number is set to 8080.
+4.	Paste the folder in the Tomcat installation directory (Example: C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24/oslc4jsimulink  configuration)
+
  
   
 #### Enabling PUT on Apache Tomcat
