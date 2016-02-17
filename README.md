@@ -126,42 +126,35 @@ Warning: Do not choose as local Subversion file storage the same folder as the o
 1.	Launch Matlab 
 2.	From the File menu, select Set Path…(if your Matlab version has a ribbon-based user interface such as inR2013, choose Set Path in the Home ribbon in the Environment section)
 3.	Use the **Add Folder…** command to add the matlab folder of the oslc4jsimulink project to the Matlab search path based on the location of your local git repository
-4. Use the **Add with Subfolders…** command to add the folder in the oslc4jsimulink project containing Simulink models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path 
- 1. In “local mode”: 
+4. Use the **Add with Subfolders…** command to add the folder in the oslc4jsimulink project containing Simulink models, or local working copies of Subversion files, to the Matlab search path. For example, based on the settings in Step #5, the concerned folder would have as path in “local mode”  
  ```text
 “C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/”
 ```
- 2. In “SVN repository mode” and “Individual SVN files mode”:
- ```text
+  and in “SVN repository mode” and “Individual SVN files mode”:
+  ```text
  C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/localworkingdirs” 
-```
+ ```
 5.	Click Save and then Close
  
 
-8.	Installing Apache Tomcat
+### 9. Installing Apache Tomcat
 
-The Steps #7 to #10 are only necessary if you want to use a specific Tomcat instance instead of the Tomcat instance embedded in Eclipse and downloaded by the Maven Tomcat plugin. Steps #7 to #10 are only necessary if you want: 
-•	to deploy the Simulink adapter on a specific Tomcat instance (possibly with specific configurations)
-•	to deploy the Simulink adapter such that it accepts HTTP PUT requests, necessary for updating Simulink parameters
+*Optional: This step are only necessary if you want to use a specific Tomcat instance instead of the Tomcat instance embedded in Eclipse and downloaded by the Maven Tomcat plugin. This step are only necessary if you want:*
+- *to deploy the Simulink adapter on a specific Tomcat instance (possibly with specific configurations)*
+- *to deploy the Simulink adapter such that it accepts HTTP PUT requests, necessary for updating Simulink parameters*
+
+#### Configuring Apache Tomcat
 
 1.	Download Tomcat 8 by going to this page:
 https://tomcat.apache.org/download-80.cgi 
 2.	Download the zip distribution for your operating system. Note: do not use the windows installer as it doesn’t install all Tomcat scripts. 
 3.	Unzip the Tomcat 8 distribution in a folder where your user account has read/write permission. Note: Windows disables direct file access to programs folder for normal users per default. Note: Installation of XAMPP can mess up previous installations of Tomcat and may need to be removed
 4.	Make sure that the /bin folder in your Tomcat installation directory contains the catalina.bat batch file 
-
-9.	Configuring Java for Tomcat
-1.	Make sure that you have JDK 8 installed on your machine. OSLC Adapters are now currently being build with Java 8 compilers. So Tomcat should also run with Java 8. 
-2.	On Windows, verify your installed Java version by typing in the command prompt java –version
-
- 
-
-3.	Test that environment variables JAVA_HOME and PATH respectively point to JDK and JDK/bin. Verify this on Windows by typing in the command prompt echo %JAVA_HOME% and echo %PATH%. If necessary set the envornoment variable in the command prompt using the set command (Example: set variable=string). After having set the environment variables, open a  new ommand prompt to verify the values of the environment variables.
-
- 
-
-4.	Make sure that JAVA_HOME and JRE_HOME both point to the same Java version, for example Java 8. 
-5.	Make sure that CATALINA_HOME points to the correct installation directory of your Tomcat distribution. 
+5.	Make sure that you have JDK 8 installed on your machine. OSLC Adapters are now currently being build with Java 8 compilers. So Tomcat should also run with Java 8. 
+6.	On Windows, verify your installed Java version by typing in the command prompt java –version
+7.	Test that environment variables **JAVA_HOME** and **PATH** respectively point to JDK and JDK/bin. Verify this on Windows by typing in the command prompt echo %JAVA_HOME% and echo %PATH%. If necessary set the envornoment variable in the command prompt using the set command (Example: set variable=string). After having set the environment variables, open a  new ommand prompt to verify the values of the environment variables.
+8.	Make sure that JAVA_HOME and JRE_HOME both point to the same Java version, for example Java 8. 
+9.	Make sure that CATALINA_HOME points to the correct installation directory of your Tomcat distribution. 
 
 10.	Adding Server Runtime Environment in Eclipse
 1.	In Eclipse. Open Window -> Preferences -> Server -> Runtime Environments to create a Tomcat installed runtime.
@@ -172,30 +165,30 @@ https://tomcat.apache.org/download-80.cgi
 5.	Click on Finish.
 
   
- 
-11.	Enabling PUT on Apache Tomcat
+#### Enabling PUT on Apache Tomcat
+
 Tomcat by default is not enabled for HTTP PUT command. But, it can easily be configured to support it.
 1.	In your Apache Tomcat 8 installation directory, open /conf/web.xml
 2.	Add the readonly init param to the web.xml file as shown below and save the file
+ ```text
 <init-param>
             		<param-name>readonly</param-name>
             		<param-value>false</param-value>
         	</init-param>
-
- 
+```
 Note: If you get the warning shown below while trying to save the file, then copy the web.xml file into another location, modify it, and then replace the original web.xml file by the modified web.xml file.
  
- 
-12.	Setting the Apache Tomcat server port 
+
+#### Setting the Apache Tomcat server port 
 
 1.	By default, the OSLC Simulink adapter service will run on port 8181. Change the port of the oslc4jsimulink service only if you need to avoid a conflict with another service already running on port 8181. Skip the next steps if you do not need to change the port. 
 2.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
 3.	Expand the edu.gatech.mbsec.adapter.simulink project
 4.	Select and open the maven pom.xml file through double-click
-5.	The pom.xml file contains several tabs. By default, the overview tab will be displayed. The various available tabs are displayed at the bottom of the editor window. Click on the pom.xml tab of the pom.xml file as highlighted below.
+5.	The pom.xml file contains several tabs. By default, the overview tab will be displayed. The various available tabs are displayed at the bottom of the editor window. Click on the pom.xml tab of the pom.xml.
+6.	In the pom.xml tab of the pom.xml file, specify the port of the OSLC Simulink adapter service in the Maven tomcat plugin configuration found at the bottom of the pom.xml tab of the pom.xml file. Enter the port number in the configuration section.
  
-6.	In the pom.xml tab of the pom.xml file, specify the port of the OSLC Simulink adapter service in the Maven tomcat plugin configuration found at the bottom of the pom.xml tab of the pom.xml file as highlighted below. Enter the port number in the configuration section as shown below.
- 
+
 13.	Installing the Chrome/Firefox Postman plugin (or any REST client)
 
 1.	For Google Chrome, add the Postman REST client to your browser: https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en
