@@ -162,6 +162,21 @@ https://tomcat.apache.org/download-80.cgi
 14.	Enter the Tomcat 8.0 installation directory (not the Apache installation directory!) as highlighted below.
 15.	Click on Finish.
 
+####	Configuring Tomcat user roles and passwords
+
+In the /conf folder of the Tomcat installation directory, add in tomcat-users.xml inside the <tomcat-users> tag the following user tag
+```xml
+ <user username="admin" password="admin" roles="admin-gui,manager-gui,manager-script" />
+```
+Note: Manager-script role is necessary to enable Maven deploy 
+  
+####	Configuring Simulink adapter for standalone deployment on Tomcat  
+1.	In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
+2.	Expand the org.eclipse.lyo.adapter.Simulink project
+3.	Copy the folder named oslc4jsimulink configuration
+4.	Paste the folder in the Tomcat installation directory (Example: apache-tomcat-7.0.59/oslc4jsimulink  configuration)
+5.	Change the port number of the OSLC Simulink adapter service of in the config.properties file under in the /oslc4jsimulink configuration folder. By default, port 8080 will be used. As an example displayed below, the port number is set to 8080.
+ 
   
 #### Enabling PUT on Apache Tomcat
 
