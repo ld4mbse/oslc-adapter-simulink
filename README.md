@@ -176,7 +176,23 @@ Note: Manager-script role is necessary to enable Maven deploy
 3.	Copy the folder named oslc4jsimulink configuration
 4.	Paste the folder in the Tomcat installation directory (Example: C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24/oslc4jsimulink  configuration)
 
- 
+####	Maven congiguration properties (only useful for deploying adapter as war on standalone Tomcat) 
+
+In the maven user/.m2/ (Example: C:\Users\Axel\.m2) folder, add in settings.xml the following
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<servers>
+		<server>
+		<id>tomcat7</id>
+		<username>admin</username>
+		<password>admin</password>
+		</server>
+	</servers>
+</settings>
+```
+Note: you can still use Tomcat 8 with the Tomcat 7 Maven plugin even though it only officially supports Tomcat 7. There is no Tomcat Maven plugin for Tomcat 8 at this point. 
+
   
 #### Enabling PUT on Apache Tomcat
 
