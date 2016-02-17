@@ -1,9 +1,20 @@
 #oslc-adapter-simulink
 ##Java-based Implementation of OSLC Simulink Adapter
 
-Instructions to install and run
-the OSLC Simulink Adapter 
-(for Matlab R2013b, 2014a, 2014b, 2015)
+
+
+## Overview of RESTful web services provided by OSLC Simulink Adapter
+
+| Simulink Concept  	| GET	| POST	| PUT	| 	DELETE	|
+| ------------- 	| ------|-------|----	|------		|
+| Block  		| X  	| X 	|  	| 		|
+| Model  		| X 	| 	| 	| 		|
+| Line  		| X 	| X	| 	| 		|
+| Input Port  		| X 	| X	| 	| 		|
+| OutputPort  		| X 	| X	| 	| 		|
+| Parameter  		| X 	| X	| X	| 		|
+
+##Instructions to install and run the OSLC Simulink Adapter (for Matlab R2013b, 2014a, 2014b, 2015)
 
 Last updated by Axel Reichwein (axel.reichwein@koneksys.com) 				February 15, 2016
 ### 1.	Installing OSLC4J
