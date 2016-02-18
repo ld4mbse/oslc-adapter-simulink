@@ -17,28 +17,32 @@
 ## Screenshots
 
 <p align="center">
-  <img style="border:5px solid black" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkServiceProviderCatalog.PNG"/>
+  <img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkServiceProviderCatalog.PNG"/>
+</p>
+<p>
+  <img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkServiceProvider.PNG"/>
+  <img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkBlockQueryService.PNG"/>
+  <img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkBlockResource.PNG"/>
 </p>
 <p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkServiceProvider.PNG"/>
+  
 </p>
 <p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkBlockQueryService.PNG"/>
+  
 </p>
 <p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkBlockResource.PNG"/>
+  <img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SubversionFileMetadata.PNG"/>
 </p>
 <p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/SubversionFileMetadata.PNG"/>
+  
 </p>
 <p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/PublishedSubversionFiles.PNG"/>
+  
 </p>
-<p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkResourceShapes.PNG"/>
-</p>
-<p align="center">
-  <img src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkRDFVocabulary.PNG"/>
+<p>
+<img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/PublishedSubversionFiles.PNG"/>
+<img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkResourceShapes.PNG"/>
+  <img height="300" src="edu.gatech.mbsec.adapter.simulink/documentation/images/SimulinkRDFVocabulary.PNG"/>
 </p>
 
 ##Instructions to install and run OSLC Simulink Adapter (for Matlab R2013b, 2014a, 2014b, 2015)
