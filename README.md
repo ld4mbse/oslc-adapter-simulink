@@ -91,7 +91,11 @@ Specify the location of the folder containing Simulink models which will be cons
 ```text
 C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink/Simulink Models/
 ```
-Several example Simulink models are located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. Note: The file path can contain backslashes. Warning: Do not put quotes around the file path!
+Several example Simulink models are located in the simulinkmodels folder in the edu.gatech.mbsec.adapter.simulink project. 
+
+Note: The file path can contain backslashes. 
+
+Warning: Do not put quotes around the file path!
 
 #### b. Retrieval of Simulink models from a subversion repository - "SVN Repository mode"
 
