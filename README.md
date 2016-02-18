@@ -343,5 +343,15 @@ Run the Maven launch configuration named **oslc adapter for simulink tomcat depl
 
 The edu.gatech.mbsec.adapter.simulink project contains example Simulink models containing different types of Simulink elements. The example models are located in the folder [simulinkmodels](/org.eclipse.lyo.adapter.simulink/simulinkmodels). Model [model11](org.eclipse.lyo.adapter.simulink/simulinkmodels/model11.slx) contains blocks, subsystems, model reference blocks, ports, lines, and lines with multiple target ports 
  
+#### Testing the retrieval of Subversion File Metadata resources in HTML and RDF (only available in "SVN Repository mode" and "Individual SVN files mode")
+URL: http://localhost:8181/oslc4jsimulink/services/subversionfiles/
+ 
+#### Testing the selection of Subversion Files hosted by Simulink adapter in HTML and RDF (only available in "Individual SVN files mode")
+URL: http://localhost:8181/oslc4jsimulink/services/svnfilepublisher
 
+#### Testing the retrieval of Simulink Resource Shapes hosted by the Simulink adapter in HTML and RDF
+URL: http://localhost:8181/oslc4jsimulink/services/resourceShapes
+
+#### Testing the retrieval of Simulink RDF vocabulary hosted by the Simulink adapter in HTML and RDF
+URL: http://localhost:8181/oslc4jsimulink/services/rdfvocabulary
 
