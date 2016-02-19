@@ -264,11 +264,11 @@ There are several options
 4. Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
 
 ##### *Optional: Launching Tomcat server manually*
-*For all options except 1), you need to launch the Tomcat server*
+*For options except 2) and 3), you need to launch the Tomcat server manually*
 
 1. *Open a command prompt*
 2. *Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command (Example:  cd C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24\bin)*
-3. *Launch Tomcat by running the following command: catalina start* 
+3. Launch Tomcat by running the following command: **catalina start** 
 
 *For all options except 1), if you wish to stop the Tomcat server*
 
@@ -306,8 +306,18 @@ Run the Maven launch configuration named **oslc adapter for simulink tomcat depl
 
 #### Option #4: Deploying OSLC Simulink adapter on standalone Tomcat server automatically from Eclipse in debug mode
 
-1. First launch the remote java application named **remote debugger oslc4jsimulink on tomcat** by choosing in Eclipse Debug-> Debug Configurations… , and then run the remote java application
-2. And then run the Maven launch configuration named **oslc4jsimulink tomcat deploy debug**
+1. In the startup.bat script under {TOMCAT_INSTALL_DIR}/bin, add following lines to the beginning as shown below 
+```text
+set JPDA_ADDRESS=8000
+set JPDA_TRANSPORT=dt_socket
+setlocal
+```
+2. Open a command prompt to launch the Tomcat server 
+3. Change the directory of the command prompt to the/bin folder of the Tomcat installation directory using the cd command (Example:  cd C:\Program Files\apache-tomcat-8.0.24-windows-x64\apache-tomcat-8.0.24\bin)
+4. Launch Tomcat by running the following command: **catalina jpda start**
+5. Set breakpoints in your code if necessary
+6. First launch the remote java application named **remote debugger oslc4jsimulink on tomcat** by choosing in Eclipse Debug-> Debug Configurations… , and then run the remote java application
+7. And then run the Maven launch configuration named **oslc4jsimulink tomcat deploy debug**
 
 
 ### 12.	Testing the OSLC Simulink Adapter
