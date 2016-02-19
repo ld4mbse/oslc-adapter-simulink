@@ -291,10 +291,10 @@ Note: If you launch the Maven launch configuration (OSLC Simulink adapter) in de
 #### Option #2: Deploying OSLC Simulink adapter on standalone Tomcat server manually
 1. Option 1)
 	1. In Eclipse, open the Project Explorer view. (Window → Show View → Project Explorer)
-	2. Expand the org.eclipse.lyo.adapter.Simulink project
+	2. Expand the edu.gatech.mbsec.adapter.simulink project
 	3. Open the /target folder 
-	4. rename the oslc4jsimulink -0.1.0.war file into oslc4jsimulink .war 
-	5. copy oslc4jsimulink .war into the /webapps folder of the of the Tomcat installation directory
+	4. rename the oslc4jsimulink-1.1.0.war file into oslc4jsimulink.war 
+	5. copy oslc4jsimulink.war into the /webapps folder of the of the Tomcat installation directory
 2. Option 2)
 	1. In your browser go to localhost:8080
 	2. Click on Manager App
