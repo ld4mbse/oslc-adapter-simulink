@@ -87,8 +87,10 @@ Follow the [Instructions to install edu.gatech.mbsec.adapter.subversion](https:/
 Specify the port number of the OSLC Simulink adapter service of in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. By default, port 8181 will be used. As an example displayed below, the port number is set to 8181.
 
 *Optional - only useful if you want to re-generate the OSLC4J-annotated Java classes*
-*Specify the location of Simulink Ecore file in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. The location of the Simulink ecore file named simulink.ecore is in the edu.gatech.mbsec.adapter.simulink.ecore project under /model/simulink.ecore. As an example displayed below, the location of the simulink.ecore file is specified to*
- ```textC:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink.ecore /model/simulink.ecore```*
+*Specify the location of Simulink Ecore file in the config.properties file under edu.gatech.mbsec.adapter.simulink/configuration. The location of the Simulink ecore file named simulink.ecore is in the edu.gatech.mbsec.adapter.simulink.ecore project under /model/simulink.ecore. As an example displayed below, the location of the simulink.ecore file is specified to
+ ```text
+ C:/Users/…/git/oslc4jsimulink/edu.gatech.mbsec.adapter.simulink.ecore /model/simulink.ecore
+ ```
 *Note: The file path can contain backslashes*
 *Warning: Do not put quotes around the file path and add nothing at the end!*
 
