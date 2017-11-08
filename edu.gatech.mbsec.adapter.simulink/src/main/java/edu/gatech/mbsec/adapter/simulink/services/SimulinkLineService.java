@@ -40,11 +40,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import edu.gatech.mbsec.adapter.simulink.resources.Constants;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
 import edu.gatech.mbsec.adapter.simulink.resources.SimulinkLine;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -81,7 +77,7 @@ public class SimulinkLineService {
 			+ "/" + Constants.PATH_SIMULINK_LINE, resourceTypes = { Constants.TYPE_SIMULINK_LINE }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public List<SimulinkLine> getLines(
 			@PathParam("modelName") final String modelName,
 			@QueryParam("oslc.where") final String where,
@@ -101,7 +97,7 @@ public class SimulinkLineService {
 	@GET	
 	@Path("{uri}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public edu.gatech.mbsec.adapter.simulink.resources.SimulinkLine getLine(@PathParam("modelName") final String modelName,
 			@PathParam("uri") final String qualifiedName)
 			throws URISyntaxException {
@@ -162,9 +158,9 @@ public class SimulinkLineService {
 			+ "/" + Constants.PATH_SIMULINK_LINE }, resourceTypes = { Constants.TYPE_SIMULINK_LINE }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@POST
 	@Consumes({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public Response addLine(@PathParam("modelName") final String modelName,
 			final SimulinkLine simulinkLine) throws IOException, ServletException {				
 		SimulinkManager.createSimulinkLine(simulinkLine, modelName);

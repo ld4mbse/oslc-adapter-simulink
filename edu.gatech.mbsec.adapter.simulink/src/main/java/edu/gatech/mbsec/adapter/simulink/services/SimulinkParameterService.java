@@ -17,9 +17,7 @@
  *******************************************************************************************/
 package edu.gatech.mbsec.adapter.simulink.services;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -50,10 +48,6 @@ import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 import edu.gatech.mbsec.adapter.simulink.resources.Constants;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkLine;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
 import edu.gatech.mbsec.adapter.simulink.resources.SimulinkParameter;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcCreationFactory;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
@@ -94,7 +88,7 @@ public class SimulinkParameterService {
 			+ "/" + Constants.PATH_SIMULINK_PARAMETER, resourceTypes = { Constants.TYPE_SIMULINK_PARAMETER }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public List<SimulinkParameter> getParameters(
 			@PathParam("modelName") final String modelName,
 			@QueryParam("oslc.where") final String where,
@@ -115,7 +109,7 @@ public class SimulinkParameterService {
 	@GET
 	@Path("{uri}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	// getParameter(
 	public synchronized Response getParameter(
 			@PathParam("modelName") final String modelName,
@@ -202,9 +196,9 @@ public class SimulinkParameterService {
 			+ "/" + Constants.PATH_SIMULINK_PARAMETER }, resourceTypes = { Constants.TYPE_SIMULINK_PARAMETER }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@POST
 	@Consumes({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public Response createParameter(
 			@PathParam("modelName") final String modelName,
 			final SimulinkParameter simulinkParameter) throws IOException,
@@ -219,7 +213,7 @@ public class SimulinkParameterService {
 	@PUT
 	@Path("{uri}")
 	@Consumes({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public synchronized Response updateParameter(
 			@PathParam("modelName") final String modelName,
 			final SimulinkParameter simulinkParameter, @Context Request request)

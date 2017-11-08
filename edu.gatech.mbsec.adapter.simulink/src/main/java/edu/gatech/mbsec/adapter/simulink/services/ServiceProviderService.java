@@ -97,7 +97,7 @@ public class ServiceProviderService
          usages = {OslcConstants.OSLC_USAGE_DEFAULT}
     )
     @GET
-    @Produces({OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON})
+    @Produces({OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD})
     public ServiceProvider[] getServiceProviders()
     {
     	httpServletResponse.addHeader("Oslc-Core-Version","2.0");
@@ -112,7 +112,7 @@ public class ServiceProviderService
      */
     @GET
     @Path("{serviceProviderId}")
-    @Produces({OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON})
+    @Produces({OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD})
     public ServiceProvider getServiceProvider(@PathParam("serviceProviderId") final String serviceProviderId)
     {
     	httpServletResponse.addHeader("Oslc-Core-Version","2.0");

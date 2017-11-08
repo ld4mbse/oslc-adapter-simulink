@@ -144,7 +144,7 @@ public class ResourceShapeService {
 			+ "/" + OslcConstants.PATH_RESOURCE_SHAPE, resourceTypes = { OslcConstants.PATH_RESOURCE_SHAPE }, usages = {
 					OslcConstants.OSLC_USAGE_DEFAULT })
 	@GET
-	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD})
 	public List<ResourceShape> getResourceShapes() {
 		final String baseURI = httpServletRequest.getRequestURL().toString().replace("/resourceShapes", "");
 		List<ResourceShape> resourceShapes = new ArrayList<ResourceShape>();
@@ -172,7 +172,7 @@ public class ResourceShapeService {
 
 	@GET
 	@Path("{resourceShapePath}")
-	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+	@Produces({ OslcMediaType.APPLICATION_RDF_XML, OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public Response getResourceShape(@Context final HttpServletRequest httpServletRequest,
 			@PathParam("resourceShapePath") final String resourceShapePath, @Context Request request) {
 		

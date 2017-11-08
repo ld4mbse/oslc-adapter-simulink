@@ -36,9 +36,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
 import edu.gatech.mbsec.adapter.simulink.resources.Constants;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
 import edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -75,7 +72,7 @@ public class SimulinkOutputPortService {
 			+ "/" + Constants.PATH_SIMULINK_OUTPUTPORT, resourceTypes = { Constants.TYPE_SIMULINK_OUTPUTPORT }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public List<SimulinkOutputPort> getOutputPorts(
 			@PathParam("modelName") final String modelName,
 			@QueryParam("oslc.where") final String where,
@@ -95,7 +92,7 @@ public class SimulinkOutputPortService {
 	@GET	
 	@Path("{uri}")
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public edu.gatech.mbsec.adapter.simulink.resources.SimulinkOutputPort getOutputPort(
 			@PathParam("modelName") final String modelName,
 			@PathParam("uri") final String qualifiedName)

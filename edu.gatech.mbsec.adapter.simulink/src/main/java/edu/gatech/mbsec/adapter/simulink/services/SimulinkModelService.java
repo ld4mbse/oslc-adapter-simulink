@@ -20,7 +20,6 @@ package edu.gatech.mbsec.adapter.simulink.services;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,9 +39,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import edu.gatech.mbsec.adapter.simulink.resources.Constants;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkBlock;
 import edu.gatech.mbsec.adapter.simulink.resources.SimulinkElementsToCreate;
-import edu.gatech.mbsec.adapter.simulink.resources.SimulinkInputPort;
 import edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcQueryCapability;
 import org.eclipse.lyo.oslc4j.core.annotation.OslcService;
@@ -76,7 +73,7 @@ public class SimulinkModelService {
 			+ "/" + Constants.PATH_SIMULINK_MODEL, resourceTypes = { Constants.TYPE_SIMULINK_MODEL }, usages = { OslcConstants.OSLC_USAGE_DEFAULT })
 	@GET
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public SimulinkModel getModel(
 			@PathParam("modelName") final String modelName,
 			@QueryParam("oslc.where") final String where,
@@ -96,7 +93,7 @@ public class SimulinkModelService {
 	
 	@GET	
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-			OslcMediaType.APPLICATION_JSON })
+			OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public edu.gatech.mbsec.adapter.simulink.resources.SimulinkModel getModel(
 			@PathParam("modelName") final String modelName)
 			throws URISyntaxException {
@@ -135,9 +132,9 @@ public class SimulinkModelService {
 	
 	@POST	
 	@Consumes({ OslcMediaType.APPLICATION_RDF_XML,
-		OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+		OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	@Produces({ OslcMediaType.APPLICATION_RDF_XML,
-		OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON })
+		OslcMediaType.APPLICATION_XML, OslcMediaType.APPLICATION_JSON, OslcMediaType.APPLICATION_JSON_LD })
 	public Response addModelElements(@PathParam("modelName") final String modelName,
 			final SimulinkElementsToCreate newElements) throws IOException, ServletException {
 		// modelName can also contain svn repo url in order to be unique
